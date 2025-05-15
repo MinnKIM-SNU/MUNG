@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>생일 로그인</title>
+</head>
+<body>
+  <h1>생일을 입력하세요</h1>
+  <input type="number" id="birthdayInput" placeholder="YYYY">
+  <button onclick="checkBirthday()">입력</button>
+  <div id="welcome"></div>
+  <div id="buttons"></div>
+
+  <script>
+    function checkBirthday() {
+      const value = document.getElementById('birthdayInput').value;
+      const welcome = document.getElementById('welcome');
+      const buttons = document.getElementById('buttons');
+
+      if (value === "0000") {
+        welcome.innerText = "안녕하세요, 으믕님. 생일 축하해요.";
+        buttons.innerHTML = `
+          <button onclick="location.href='cake.html'">케이크</button>
+          <button onclick="location.href='coupon.html'">쿠폰</button>
+        `;
+      } else {
+        welcome.innerText = "생일이 일치하지 않습니다.";
+        buttons.innerHTML = "";
+      }
+    }
+  </script>
+</body>
+</html>
